@@ -4,6 +4,10 @@ module Hangman
       send(message_name, *args)
     end
 
+    def word_is(word)
+      "The word is #{word}"
+    end
+
     def prompt_turn
       "It's your turn. Take a guess."
     end

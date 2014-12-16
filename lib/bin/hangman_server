@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require "pry"
+
+Dir[File.expand_path(File.join(__FILE__, "../../lib/**/*.rb"))].each { |f| require f }
+
+server = Hangman::Server.new
+
+trap "EXIT" do
+  puts "Closing connection"
+  server.quit
+end
+
+trap "INT" do
+  exit
+end
+
+server.start

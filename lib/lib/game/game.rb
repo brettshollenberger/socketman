@@ -24,6 +24,7 @@ module Hangman
     end
 
     def take_turn
+      notify_word
       prompt_turn
       guess_letter
       select_winner if over?
@@ -76,6 +77,12 @@ module Hangman
       end
 
       true
+    end
+
+    def notify_word
+      players.each do |player|
+        runner.write(player, message(:word_is, word))
+      end
     end
 
     def notify_guess(current_player, guessed_letter)

@@ -35,7 +35,8 @@ class Client
       loop do
         msg = server.gets
         puts msg
-        if msg == "Game over\n"
+
+        if msg.match(/Game over/)
           exit
         end
       end
