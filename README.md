@@ -1,14 +1,14 @@
 socketman
 =========
 
-Hangman on UNIX sockets
+Multiclient preforking Hangman server over UNIX sockets
 
 #### Start a Hangman Server
 ```bash
 bin/hangman_server
 ```
 
-#### Add as many Hangman Clients as you have players
+#### Add as many players as you like
 ```bash
 bin/hangman_client
 ```
