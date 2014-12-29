@@ -8,7 +8,7 @@ Multiclient preforking Hangman server over UNIX sockets
 bin/hangman_server
 ```
 
-#### Add as many players as you like
+#### Add as many players as you like on separate terminals or machines
 ```bash
 bin/hangman_client
 ```
