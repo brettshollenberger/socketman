@@ -22,7 +22,7 @@ class Client
 
   def request_loop
     @request = Thread.start do
-      puts "Type anything to start"
+      puts "Wait for other players OR type anything to start"
 
       loop do
         msg = gets.chomp

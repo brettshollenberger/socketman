@@ -23,7 +23,7 @@ module Hangman
       create_socket
       notify_started
       open_io_pipe
-      start_prefork_threads
+      start_acceptor_threads
       receive_start_command
       kill_threads
       game.play
@@ -62,7 +62,7 @@ module Hangman
       end
     end
 
-    def start_prefork_threads
+    def start_acceptor_threads
       2.times do
         threads << Thread.start do
           loop do
@@ -75,8 +75,6 @@ module Hangman
             add_connection({ :name => player_name, :connection => socket })
 
             listen_for_game_start(socket)
-
-            puts "Opening another prefork loop"
           end
 
           self
