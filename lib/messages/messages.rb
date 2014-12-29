@@ -12,6 +12,10 @@ module Hangman
       "It's your turn. Take a guess."
     end
 
+    def other_players_turn(player)
+      "It's #{player.name.capitalize}'s turn"
+    end
+
     def invalid_length
       "Guess must be a single letter. Try again."
     end

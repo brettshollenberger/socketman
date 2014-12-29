@@ -52,6 +52,12 @@ module Hangman
 
     def prompt_turn
       runner.write(current_player, message(:prompt_turn))
+
+      players.each do |player|
+        unless player == current_player
+          runner.write(player, message(:other_players_turn, current_player))
+        end
+      end
     end
 
     def guess_letter

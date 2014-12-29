@@ -26,7 +26,6 @@ class Client
 
       loop do
         msg = gets.chomp
-        puts "You said #{msg}"
         server.puts msg
       end
     end
